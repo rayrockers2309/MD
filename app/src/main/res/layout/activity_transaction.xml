@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- CardView for Form -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/statusBarColor"
+            app:cardCornerRadius="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/form_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="28dp">
+
+                <!-- Transaction Type -->
+                <TextView
+                    android:id="@+id/transactionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/transaction_type"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/list_transaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/spinner_background"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="52dp"
+                    android:spinnerMode="dropdown" />
+
+                <!-- Amount Input -->
+                <TextView
+                    android:id="@+id/amountLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/amount"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/amount_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp">
+
+                    <com.laila.sustainwise.ui.customview.NumericEditText
+                        android:id="@+id/amount_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="@string/enter_amount"
+                        android:inputType="numberDecimal"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Date Input -->
+                <TextView
+                    android:id="@+id/date_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/label_date"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/date_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp">
+
+                    <com.laila.sustainwise.ui.customview.DatePickerEditText
+                        android:id="@+id/date_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:drawableEnd="@drawable/ic_calendar"
+                        android:hint="@string/select_date"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Category -->
+                <TextView
+                    android:id="@+id/categoryLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/category"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/list_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/spinner_background"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="52dp"
+                    android:spinnerMode="dropdown" />
+
+                <!-- Submit Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/submit_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/btn_save"
+                    android:textColor="@color/textColor"
+                    android:textSize="16dp"
+                    app:cornerRadius="32dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

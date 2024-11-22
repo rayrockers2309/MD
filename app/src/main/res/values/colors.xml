@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="windowBackground">#FFFAD5</color>
+    <color name="statusBarColor">#FFFFF6</color>
+    <color name="colorPrimaryVariant">#FFF758</color>
+    <color name="colorPrimary">#FCE53A</color>
+    <color name="strokeColor">#D6C22D</color>
+    <color name="textColor">#444336</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="yellow_200">#DAC503</color>
+    <color name="yellow_700">#877501</color>
+    <color name="lavender">#8692f7</color>
+    <color name="light_green">#DBFC3A</color>
+
+    <color name="green">#279D60</color>
+    <color name="red">#CD4043</color>
+    <color name="gray">#A9A5A5</color>
+</resources>

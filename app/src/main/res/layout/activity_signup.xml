@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:fillViewport="true"
+    tools:context=".ui.signup.SignupActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Logo Section -->
+        <LinearLayout
+            android:id="@+id/logo_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="28dp"
+            app:layout_constraintBottom_toTopOf="@id/card_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/logo_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:contentDescription="@string/logo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo_no_bg" />
+        </LinearLayout>
+
+        <!-- CardView Section -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/statusBarColor"
+            app:cardCornerRadius="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/form_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="28dp">
+
+                <!-- Signup Title -->
+                <TextView
+                    android:id="@+id/welcome_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/title_signup"
+                    android:textColor="@color/textColor"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/welcome_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/desc_signup"
+                    android:textColor="@color/textColor" />
+
+                <!-- Username Section -->
+                <TextView
+                    android:id="@+id/username_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/title_username"
+                    android:textColor="@color/textColor" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nameEditTextLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <com.laila.sustainwise.ui.customview.NameEditText
+                        android:id="@+id/ed_signup_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:hint="@string/input_name"
+                        android:inputType="text"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Email Section -->
+                <TextView
+                    android:id="@+id/email_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/title_email"
+                    android:textColor="@color/textColor" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/emailEditTextLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <com.laila.sustainwise.ui.customview.EmailEditText
+                        android:id="@+id/ed_signup_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:hint="@string/input_email"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Password Section -->
+                <TextView
+                    android:id="@+id/password_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/title_password"
+                    android:textColor="@color/textColor" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/passwordEditTextLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <com.laila.sustainwise.ui.customview.PasswordEditText
+                        android:id="@+id/ed_signup_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:hint="@string/input_password"
+                        android:inputType="textPassword"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Signup Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/signup_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="12dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/btn_signup"
+                    android:textColor="@color/textColor"
+                    app:cornerRadius="32dp" />
+
+                <!-- Social Login Section -->
+                <TextView
+                    android:id="@+id/signup_with"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/signup_with"
+                    android:textColor="@color/textColor" />
+
+                <LinearLayout
+                    android:id="@+id/social_login_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/google_login_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="12dp"
+                        android:background="@drawable/google" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

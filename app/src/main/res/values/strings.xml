@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">SustainWise</string>
+    <string name="logo">Logo</string>
+
+    <!-- Welcome Text -->
+    <string name="title_login">Login</string>
+    <string name="desc_login">Silakan masuk dengan informasi Anda!</string>
+    <string name="title_signup">Signup</string>
+    <string name="desc_signup">Silahkan isi dengan informasi baru anda!</string>
+    <string name="title_forgot_password">Lupa Password</string>
+    <string name="desc_forgot_password">Silahkan masukkan password baru Anda!</string>
+
+    <!-- Auth -->
+    <string name="title_email">Email</string>
+    <string name="input_email">Masukkan email anda</string>
+    <string name="invalid_email">Masukkan email dengan benar</string>
+    <string name="title_password">Password</string>
+    <string name="input_password">Masukkan password anda</string>
+    <string name="password_short">Kata sandi harus minimal 8 karakter</string>
+    <string name="title_username">Username</string>
+    <string name="input_name">Masukkan nama anda</string>
+    <string name="empty_name">Nama tidak boleh kosong</string>
+    <string name="name_short">Nama harus terdiri dari minimal 5 karakter</string>
+    <string name="title_new_password">New Password</string>
+    <string name="forgot_password">Lupa Password?</string>
+
+    <!-- Button -->
+    <string name="btn_login">Login</string>
+    <string name="btn_signup">Sign Up</string>
+    <string name="btn_add">transaction</string>
+    <string name="btn_change_password">Ubah Password</string>
+    <string name="btn_save">Simpan</string>
+    <string name="btn_edit">Edit Profil</string>
+    <string name="btn_delete">Hapus</string>
+    <string name="btn_update">Ubah</string>
+
+    <!-- With -->
+    <string name="login_with">atau Login dengan</string>
+    <string name="signup_with">atau Signup dengan</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_history">Riwayat</string>
+    <string name="title_recomend">Rekomendasi</string>
+    <string name="title_account">Akun</string>
+
+    <!-- Item row -->
+    <string name="arrow_icon_income">income</string>
+    <string name="nominal">Rp 1.000.000,00</string>
+    <string name="date">28/10/2024</string>
+    <string name="category">Kategori</string>
+
+    <!-- home -->
+    <string name="ic_logo">logo</string>
+    <string name="no_transactions">Belum ada transaksi yang dilakukan</string>
+    <string name="welcome_home">Halo, Selamat Datang</string>
+    <string name="title_saldo">Total Saldo</string>
+    <string name="title_total_balance">Rp. 2.469.000,00</string>
+    <string name="title_riwayat_home">Riwayat Transaksi</string>
+
+    <!-- input transaction -->
+    <string name="transaction_type">Pilih Transaksi</string>
+    <string name="amount">Nominal</string>
+    <string name="enter_amount">Masukkan nominal transaksi</string>
+    <string name="label_date">Tanggal</string>
+    <string name="select_date">Silahkan pilih tanggal transaksi</string>
+
+    <!-- history -->
+    <string name="history_label">Riwayat Transaksi Bulan Ini</string>
+    <string name="transaction_month">November 2024</string>
+
+    <!-- account -->
+    <string name="profile_picture">Gambar profil</string>
+    <string name="profile_name">Angkasa Budi</string>
+    <string name="faq_icon">ikon faq</string>
+    <string name="label_faq">FaQ</string>
+    <string name="arrow_icon_right">arrow ikon kanan</string>
+    <string name="about_icon">ikon about</string>
+    <string name="label_about">About</string>
+    <string name="edtprofile_email">angksbudi@gmail.com</string>
+    <string name="edtprofile_password">********</string>
+    <string name="label_save">Simpan</string>
+
+</resources>

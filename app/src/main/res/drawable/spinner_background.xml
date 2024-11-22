@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/statusBarColor" />
+            <stroke android:width="1dp" android:color="@color/gray" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_arrow_down"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="52dp" />
+</layer-list>
