@@ -78,6 +78,8 @@
     <string name="arrow_icon_right">arrow ikon kanan</string>
     <string name="about_icon">ikon about</string>
     <string name="label_about">About</string>
+    <string name="logout_icon">ikon logout</string>
+    <string name="label_logout">Logout</string>
     <string name="edtprofile_email">angksbudi@gmail.com</string>
     <string name="edtprofile_password">********</string>
     <string name="label_save">Simpan</string>
