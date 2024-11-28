@@ -84,4 +84,8 @@
     <string name="edtprofile_password">********</string>
     <string name="label_save">Simpan</string>
 
+    <!-- Recomend -->
+    <string name="tat_label">Tips and Tricks</string>
+    <string name="tat_placeholder">Isi dari generate Tips and Tricks bulan ini</string>
+
 </resources>
