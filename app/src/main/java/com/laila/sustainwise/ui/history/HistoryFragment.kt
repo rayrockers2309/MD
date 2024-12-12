@@ -1,5 +1,6 @@
 package com.laila.sustainwise.ui.history
 
+import android.graphics.drawable.ColorDrawable
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.util.Log
@@ -8,9 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
+import com.laila.sustainwise.R
 import com.laila.sustainwise.data.retrofit.ApiResponse
 import com.laila.sustainwise.data.retrofit.RetrofitInstance
 import com.laila.sustainwise.databinding.FragmentHistoryBinding
@@ -52,6 +56,11 @@ class HistoryFragment : Fragment() {
             val currentYear = Calendar.getInstance().get(Calendar.YEAR)
             fetchTransactions(idToken, "All", currentMonth, currentYear)
         }
+
+        val toolbar = (activity as AppCompatActivity).supportActionBar
+        toolbar?.title = "History"
+        setHasOptionsMenu(true)
+        toolbar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.statusBarColor)))
 
         return binding.root
     }

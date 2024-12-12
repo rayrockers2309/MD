@@ -1,14 +1,18 @@
 package com.laila.sustainwise.ui.home
 
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
+import com.laila.sustainwise.R
 import com.laila.sustainwise.data.retrofit.RetrofitInstance
 import com.laila.sustainwise.data.retrofit.TransactionResponse
 import com.laila.sustainwise.databinding.FragmentHomeBinding
@@ -60,8 +64,14 @@ class HomeFragment : Fragment() {
             fetchLatestTransactions(idToken) // Ambil transaksi terbaru
         }
 
+        val toolbar = (activity as AppCompatActivity).supportActionBar
+        toolbar?.title = "SustainWise"
+        setHasOptionsMenu(true)
+        toolbar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.statusBarColor)))
+
         return binding.root
     }
+
 
     // Menampilkan ProgressBar
     private fun showProgressBar() {

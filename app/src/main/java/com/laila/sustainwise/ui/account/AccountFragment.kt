@@ -1,6 +1,7 @@
 package com.laila.sustainwise.ui.account
 
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,7 +11,10 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -78,21 +82,38 @@ class AccountFragment : Fragment() {
             }
         }
 
+        val toolbar = (activity as AppCompatActivity).supportActionBar
+        toolbar?.title = "Account"
+        setHasOptionsMenu(true)
+        toolbar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.statusBarColor)))
+
         return rootView
     }
 
     private fun performLogout() {
-        FirebaseAuth.getInstance().signOut()
-        googleSignInClient.signOut().addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                Toast.makeText(requireContext(), "Logout successful", Toast.LENGTH_SHORT).show()
-                val intent = Intent(requireContext(), LoginActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
-            } else {
-                Toast.makeText(requireContext(), "Failed to logout", Toast.LENGTH_SHORT).show()
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Logout Confirmation")
+            .setMessage("Are you sure you want to logout?")
+            .setPositiveButton("Yes") { dialog, which ->
+                // Sign out after user confirms logout
+                FirebaseAuth.getInstance().signOut()
+                googleSignInClient.signOut().addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(requireContext(), "Logout successful", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(requireContext(), LoginActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(requireContext(), "Failed to logout", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                dialog.dismiss() // Dismiss the dialog after user clicks Yes
             }
-        }
+            .setNegativeButton("Cancel") { dialog, which ->
+                dialog.dismiss() // Dismiss the dialog if user clicks Cancel
+            }
+            .create()
+            .show()
     }
 
     private fun getUserProfile() {

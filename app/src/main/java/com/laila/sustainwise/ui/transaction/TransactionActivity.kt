@@ -2,10 +2,12 @@ package com.laila.sustainwise.ui.transaction
 
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
@@ -122,6 +124,15 @@ class TransactionActivity : AppCompatActivity() {
                 }
             }
         }
+        setupActionBar()
+    }
+
+    private fun setupActionBar() {
+        supportActionBar?.apply {
+            title = getString(R.string.view_transaction)
+            setDisplayHomeAsUpEnabled(true) // Menambahkan tombol kembali
+            setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this@TransactionActivity, R.color.statusBarColor)))
+        }
     }
 
     private fun updateCategoryInputType(type: String) {
@@ -152,6 +163,12 @@ class TransactionActivity : AppCompatActivity() {
                     Toast.makeText(this@TransactionActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
                 }
             })
+    }
+
+    @Suppress("DEPRECATION")
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }
 

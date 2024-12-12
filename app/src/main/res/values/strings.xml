@@ -54,7 +54,7 @@
     <!-- Home -->
     <string name="ic_logo">Logo</string>
     <string name="no_transactions">No transactions found for the selected month.</string>
-    <string name="welcome_home">Hi, Welcome to Sustain Wise</string>
+    <string name="welcome_home">Hi, Welcome!</string>
     <string name="title_saldo">Total Balance</string>
     <string name="title_total_balance">Amount</string>
     <string name="title_riwayat_home">Transaction History</string>
@@ -110,5 +110,12 @@
     <string name="answer_four">Go to the Account page and select Update Profile. Choose \'Update\' to pick a new picture or \'Delete\' to remove it. Tap Save to finalize the changes.</string>
     <string name="answer_five">Tap \'Forgot Password\' on the login page. Enter your email and tap \'Change Password\'. Check your email for a reset link, follow it, and create a new password.</string>
     <string name="answer_six">Navigate to the Account page and tap \'Logout\'. You will be logged out of the application.</string>
+
+    <!-- Action bar -->
+    <string name="view_transaction">Transaction</string>
+    <string name="view_faq">FaQ</string>
+    <string name="view_about">About</string>
+    <string name="view_edtprofil">Edit Profile</string>
+    <string name="view_home">Sustain Wise</string>
 
 </resources>

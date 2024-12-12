@@ -1,8 +1,11 @@
 package com.laila.sustainwise.ui.signup
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowInsets
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
@@ -55,6 +58,21 @@ class SignupActivity : AppCompatActivity() {
             .requestEmail()
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        setupActionBar()
+    }
+
+    private fun setupActionBar() {
+        @Suppress("DEPRECATION")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
+        supportActionBar?.hide()
     }
 
     // Google Sign-In logic
@@ -117,11 +135,19 @@ class SignupActivity : AppCompatActivity() {
                     // Create a new user in Firestore
                     db.collection("users").document(userId).set(user)
                         .addOnSuccessListener {
-                            Toast.makeText(this, "Google User added successfully", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                this,
+                                "Google User added successfully",
+                                Toast.LENGTH_LONG
+                            ).show()
                             navigateToMainActivity()
                         }
                         .addOnFailureListener { e ->
-                            Toast.makeText(this, "Failed to save Google user: ${e.message}", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                this,
+                                "Failed to save Google user: ${e.message}",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                 } else {
                     // User exists, navigate to main activity
@@ -129,7 +155,8 @@ class SignupActivity : AppCompatActivity() {
                 }
             }
             .addOnFailureListener { e ->
-                Toast.makeText(this, "Failed to check Firestore: ${e.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Failed to check Firestore: ${e.message}", Toast.LENGTH_LONG)
+                    .show()
             }
     }
 
@@ -161,17 +188,26 @@ class SignupActivity : AppCompatActivity() {
                         db.collection("users").document(user.uid)
                             .set(userData)
                             .addOnSuccessListener {
-                                Toast.makeText(this, "User created and data saved", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    this,
+                                    "User created and data saved",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                                 navigateToMainActivity()
                             }
                             .addOnFailureListener { e ->
                                 Log.w("SignUpActivity", "Error adding document", e)
-                                Toast.makeText(this, "Error saving user data", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this, "Error saving user data", Toast.LENGTH_SHORT)
+                                    .show()
                             }
                     }
                 } else {
                     // If user creation fails, display a message to the user.
-                    Log.w("SignUpActivity", "createUserWithEmailAndPassword:failure", task.exception)
+                    Log.w(
+                        "SignUpActivity",
+                        "createUserWithEmailAndPassword:failure",
+                        task.exception
+                    )
                     Toast.makeText(this, "Signup Failed.", Toast.LENGTH_SHORT).show()
                 }
             }

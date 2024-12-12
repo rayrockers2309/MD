@@ -80,4 +80,3 @@ data class DeleteTransactionResponse(
 data class DeletePhotoResponse(
     val message: String
 )
-

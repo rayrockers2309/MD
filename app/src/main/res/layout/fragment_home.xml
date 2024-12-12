@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:text="@string/welcome_home"
             android:fontFamily="@font/poppins_bold"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textColor="@color/textColor" />
 
         <androidx.cardview.widget.CardView

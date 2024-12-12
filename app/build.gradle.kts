@@ -97,6 +97,8 @@ dependencies {
     // Other Libraries
     implementation(libs.tensorflow.lite)
     implementation(libs.tensorflow.lite.support)
+
+    implementation ("com.google.android.material:material:1.7.0")
 }
 
 

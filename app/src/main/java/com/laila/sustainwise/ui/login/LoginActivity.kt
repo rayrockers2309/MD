@@ -1,8 +1,11 @@
 package com.laila.sustainwise.ui.login
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowInsets
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -71,6 +74,21 @@ class LoginActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             loginUser()
         }
+
+        setupActionBar()
+    }
+
+    private fun setupActionBar() {
+        @Suppress("DEPRECATION")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
+        supportActionBar?.hide()
     }
 
     // Google Sign-In logic
@@ -132,11 +150,19 @@ class LoginActivity : AppCompatActivity() {
                     // Create a new user in Firestore
                     db.collection("users").document(userId).set(user)
                         .addOnSuccessListener {
-                            Toast.makeText(this, "Google User added successfully", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                this,
+                                "Google User added successfully",
+                                Toast.LENGTH_LONG
+                            ).show()
                             navigateToMainActivity()
                         }
                         .addOnFailureListener { e ->
-                            Toast.makeText(this, "Failed to save Google user: ${e.message}", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                this,
+                                "Failed to save Google user: ${e.message}",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                 } else {
                     // User exists, navigate to main activity
@@ -144,7 +170,8 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
             .addOnFailureListener { e ->
-                Toast.makeText(this, "Failed to check Firestore: ${e.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Failed to check Firestore: ${e.message}", Toast.LENGTH_LONG)
+                    .show()
             }
     }
 
@@ -186,4 +213,3 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 }
-

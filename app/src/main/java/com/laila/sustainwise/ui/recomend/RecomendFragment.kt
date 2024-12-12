@@ -1,6 +1,7 @@
 package com.laila.sustainwise.ui.recomend
 
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -84,6 +87,11 @@ class RecomendFragment : Fragment() {
 
         // Fetch user token and data
         fetchUserTokenAndFetchStatistics()
+
+        val toolbar = (activity as AppCompatActivity).supportActionBar
+        toolbar?.title = "Recommendation"
+        setHasOptionsMenu(true)
+        toolbar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.statusBarColor)))
 
         return binding.root
     }
