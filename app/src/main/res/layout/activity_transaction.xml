@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/windowBackground"
     android:fillViewport="true"
-    android:padding="16dp"
-    tools:context=".ui.transaction.TransactionActivity">
+    android:padding="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -111,6 +109,7 @@
                         android:paddingHorizontal="12dp"
                         android:textColor="@color/textColor"
                         android:textSize="16sp" />
+
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Category -->
@@ -124,16 +123,49 @@
                     android:textColor="@color/textColor"
                     android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/list_category"
+                <LinearLayout
+                    android:id="@+id/category_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/spinner_background"
-                    android:drawableEnd="@drawable/ic_arrow_down"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="52dp"
-                    android:spinnerMode="dropdown" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/spinner_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Spinner
+                            android:id="@+id/list_category"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/spinner_background"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="52dp"
+                            android:spinnerMode="dropdown" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/input_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/category_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/enter_category" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
 
                 <!-- Submit Button -->
                 <com.google.android.material.button.MaterialButton
@@ -145,7 +177,7 @@
                     android:fontFamily="@font/poppins_bold"
                     android:text="@string/btn_save"
                     android:textColor="@color/textColor"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     app:cornerRadius="32dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

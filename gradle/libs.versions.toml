@@ -1,5 +1,20 @@
 [versions]
-agp = "8.6.0"
+agp = "8.7.1"
+
+compiler = "4.15.1"
+firebaseAuth = "21.3.0"
+
+firebaseBom = "33.6.0"
+firebaseCore = "20.1.0"
+firebaseFirestoreKtx = "24.8.0"
+firebaseFirestoreKtxVersion = "25.1.1"
+firebaseMessaging = "23.1.1"
+glide = "4.16.0"
+
+googleServices = "4.3.15"
+googleServicesVersion = "4.4.2"
+gradleVersion = "8.1.1"
+imagepicker = "2.1"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -9,11 +24,43 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.2.0"
+mpandroidchart = "v3.1.0"
 navigationFragmentKtx = "2.8.4"
 navigationUiKtx = "2.8.4"
 
+okhttp = "4.11.0"
+
+playServicesAuthVersion = "20.6.0"
+playServicesBase = "18.1.0"
+protobufGradlePlugin = "0.9.0"
+
+protobufJava = "3.21.9"
+tensorflowLite = "2.13.0"
+tensorflowLiteSupport = "0.4.0"
+volley = "1.2.1"
+workRuntime = "2.8.1"
+toolsCore = "1.0.0-alpha10"
+
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+
+androidx-work-runtime = { module = "androidx.work:work-runtime", version.ref = "workRuntime" }
+build-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradleVersion" }
+compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "compiler" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+firebase-auth = { module = "com.google.firebase:firebase-auth", version.ref = "firebaseAuth" }
+
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-core = { module = "com.google.firebase:firebase-core", version.ref = "firebaseCore" }
+firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
+firebase-firestore-ktx-v2511 = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "firebaseFirestoreKtxVersion" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "firebaseMessaging" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+gms-play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuthVersion" }
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+google-services-v442 = { module = "com.google.gms:google-services", version.ref = "googleServicesVersion" }
+imagepicker = { module = "com.github.dhaval2404:imagepicker", version.ref = "imagepicker" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -23,6 +70,20 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+
+mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchart" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+play-services-base = { module = "com.google.android.gms:play-services-base", version.ref = "playServicesBase" }
+protobuf-gradle-plugin = { module = "com.google.protobuf:protobuf-gradle-plugin", version.ref = "protobufGradlePlugin" }
+protobuf-java = { module = "com.google.protobuf:protobuf-java", version.ref = "protobufJava" }
+retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
+converter-gson = "com.squareup.retrofit2:converter-gson:2.9.0"
+logging-interceptor = "com.squareup.okhttp3:logging-interceptor:4.11.0"
+
+tensorflow-lite-support = { module = "org.tensorflow:tensorflow-lite-support", version.ref = "tensorflowLiteSupport" }
+tensorflow-lite = { module = "org.tensorflow:tensorflow-lite", version.ref = "tensorflowLite" }
+volley = { group = "com.android.volley", name = "volley", version.ref = "volley" }
+androidx-tools-core = { group = "androidx.privacysandbox.tools", name = "tools-core", version.ref = "toolsCore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

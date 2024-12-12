@@ -40,7 +40,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:text="@string/nominal"
                 android:textColor="@color/red"
-                android:textSize="26sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView

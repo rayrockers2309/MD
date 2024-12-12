@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/windowBackground"
@@ -26,8 +27,8 @@
 
             <ImageView
                 android:id="@+id/logo_image"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:contentDescription="@string/logo"
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo_no_bg" />
@@ -92,12 +93,13 @@
                     <com.laila.sustainwise.ui.customview.EmailEditText
                         android:id="@+id/ed_login_email"
                         android:layout_width="match_parent"
-                        android:layout_height="42dp"
+                        android:layout_height="wrap_content"
                         android:hint="@string/input_email"
                         android:inputType="textEmailAddress"
                         android:paddingHorizontal="16dp"
                         android:textColor="@color/textColor"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Password Section -->
@@ -119,12 +121,13 @@
                     <com.laila.sustainwise.ui.customview.PasswordEditText
                         android:id="@+id/ed_login_password"
                         android:layout_width="match_parent"
-                        android:layout_height="42dp"
+                        android:layout_height="wrap_content"
                         android:hint="@string/input_password"
                         android:inputType="textPassword"
                         android:paddingHorizontal="16dp"
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -184,10 +187,14 @@
 
                     <ImageView
                         android:id="@+id/google_login_button"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_margin="12dp"
-                        android:background="@drawable/google" />
+                        android:src="@drawable/google"
+                        android:contentDescription="@string/google_login"
+                        android:clickable="true"
+                        android:focusable="true" />
+
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

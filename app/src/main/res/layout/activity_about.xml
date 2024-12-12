@@ -2,8 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     android:fillViewport="true"
     android:padding="16dp"
     tools:context=".ui.about.AboutActivity">
@@ -12,12 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- CardView for FAQ Content -->
+        <!-- CardView for About Content -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardFAQContent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_margin="16dp"
             app:cardBackgroundColor="@color/statusBarColor"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
@@ -33,24 +36,28 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <!-- Question -->
+                <!-- Title -->
                 <TextView
                     android:id="@+id/tvAboutTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="Mengenai Aplikasi"
+                    android:text="@string/about_title"
                     android:textColor="@color/textColor"
-                    android:textSize="18sp" />
+                    android:textSize="20sp"
+                    android:gravity="center" />
 
+                <!-- Description -->
                 <TextView
                     android:id="@+id/tvAboutDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:fontFamily="@font/poppins_regular"
-                    android:text="Deskripsi"
+                    android:text="@string/about_desc"
                     android:textColor="@color/textColor"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:gravity="center" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
