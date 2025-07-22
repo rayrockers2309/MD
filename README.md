@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# MD
-=======
-# MD Deploy
+#SustaiWise Mobile App
 
 ## Tools
    - Figma
@@ -27,4 +24,3 @@
 
 
 
->>>>>>> bf7087a028b10d6f8cc48819b147b80473856947
